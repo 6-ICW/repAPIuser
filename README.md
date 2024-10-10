@@ -1,3 +1,13 @@
 # API 6INF test user
 
-## info volgt
+## route info
+
+/api/user/
+
+### endpoints
+
+allUserInfo --> GET - all user info
+
+controleURNWW --> [username - wachtwoord]
+
+addUser --> POST [username - wachtwoord - nickName]
