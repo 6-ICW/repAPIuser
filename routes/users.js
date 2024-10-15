@@ -3,7 +3,7 @@ const userController = require("../controller/users");
 const router = express.Router();
 
 router.get("/allUserInfo", userController.getusersInfo);
-router.get("/gitUserRights", userController.getUserRights);
+router.get("/getUserRights", userController.getUserRights);
 router.post("/controleURNWW", userController.controleURNWW);
 router.post("/addUser", userController.addUser);
 router.post("/addUserRight", userController.addUserRight);
