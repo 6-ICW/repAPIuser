@@ -43,9 +43,21 @@ const addUser = (req, res) => {
   });
 };
 
+const addUserRight = (req, res) => {
+  let userID = req.body.userID;
+  let rightID = req.body.rightID;
+
+  const sql = "insert into userRight (userID, rightID) values (?,?)";
+  db.run(sql, [userID, rightID], (err) => {
+    if (err) return res.json({ result: "nok", message: err.message });
+    res.json({ result: "ok", data: { insertedID: this.lastID } });
+  });
+};
+
 module.exports = {
   controleURNWW,
   addUser,
   getusersInfo,
   getUserRights,
+  addUserRight,
 };
