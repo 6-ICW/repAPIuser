@@ -8,6 +8,14 @@ const getusersInfo = (req, res) => {
   });
 };
 
+const getUserRights = (req, res) => {
+  const sql = "select * from userRights_V";
+  db.all(sql, (err, rows) => {
+    if (err) return res.json({ result: "nok", message: err.message });
+    res.json({ result: "ok", data: rows });
+  });
+};
+
 // doe een controle op gebruikersnaam en wachtwoord
 const controleURNWW = (req, res) => {
   // Nodige variabelen aanmaken
@@ -39,4 +47,5 @@ module.exports = {
   controleURNWW,
   addUser,
   getusersInfo,
+  getUserRights,
 };
