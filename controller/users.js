@@ -8,6 +8,14 @@ const getusersInfo = (req, res) => {
   });
 };
 
+const getRights = (req, res) => {
+  const sql = "select * from rights";
+  db.all(sql, (err, rows) => {
+    if (err) return res.json({ result: "nok", message: err.message });
+    res.json({ result: "ok", data: rows });
+  });
+};
+
 const getUserRights = (req, res) => {
   const sql = "select * from userRights_V";
   db.all(sql, (err, rows) => {
@@ -60,4 +68,5 @@ module.exports = {
   getusersInfo,
   getUserRights,
   addUserRight,
+  getRights,
 };

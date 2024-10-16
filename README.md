@@ -13,4 +13,5 @@ controleURNWW --> [username - wachtwoord]
 addUser --> POST [username - wachtwoord - nickName]
 
 addUserRight --> POST [userID,rightID]
-getUserRights --> GET - alle user rechten
+getUserRights --> GET - alle users met hun rechten
+getRights --> GET - alle mogelijke rechten
